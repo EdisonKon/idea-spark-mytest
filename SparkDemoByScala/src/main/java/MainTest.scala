@@ -24,5 +24,6 @@ object MainTest {
     intArrayVar.toArray //转成定长数组
     intArrayVar.toBuffer //转成非定长
 
+
   }
 }
