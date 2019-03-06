@@ -8,11 +8,11 @@
 out
 gen
 .idea/workspace.xml
-SparkDemoByScala/src/main/resources/
-SparkDemoByScala/src/test/
-SparkDemoByScala/target/
+#SparkDemoByScala/src/main/resources/
+#SparkDemoByScala/src/test/
+#SparkDemoByScala/target/
 out/
-sparkDemo1/src/main/resources/
-sparkDemo1/src/test/
-sparkDemo1/target/
+#sparkDemo1/src/main/resources/
+#sparkDemo1/src/test/
+#sparkDemo1/target/
 src/
