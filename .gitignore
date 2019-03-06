@@ -16,3 +16,5 @@ out/
 #sparkDemo1/src/test/
 #sparkDemo1/target/
 src/
+SparkDemoByScala/target/
+sparkDemo1/target/
