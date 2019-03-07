@@ -72,6 +72,27 @@ object MainTest {
     numsList.isEmpty
     //获取第二个元素
     numsList.tail.head
+    //连接操作 ::: 连接2个list生成新的list :: 单个元素连接list
+    var t = List(1,2,3):::List(4,5,6)
+    var t1 = 1::List(2,3,4)
+    //丢弃前n个元素
+    t1.drop(2)
+    //获取前n个元素
+    t1.take(1)
+    //将列表分隔 两两分隔 (2)
+    t.splitAt(2) //得到 List(1,2) List(3,4) List(5,6) 与 (nums.take(2),nums.drop(2)) 相同
+    //Zip操作
+    var nums=List(1,2,3,4) //List(1, 2, 3, 4)
+    var chars=List('1','2','3','4')//List(1, 2, 3, 4)
+
+    //返回的是List类型的元组(Tuple）
+    nums zip chars//得到 List((1,1), (2,2), (3,3), (4,4))
+    //toString
+    print(nums.toString()) // List(1, 2, 3, 4)
+    //mkString
+    nums.mkString(",") // 1,2,3,4
+
+
     //插入算法
     def isort(xs: List[Int]): List[Int] =
       if (xs.isEmpty) Nil
@@ -81,6 +102,6 @@ object MainTest {
       if (xs.isEmpty || x <= xs.head) x :: xs
       else xs.head :: insert(x, xs.tail)
 
-    isort(numsList);
+//    isort(numsList);
   }
 }
