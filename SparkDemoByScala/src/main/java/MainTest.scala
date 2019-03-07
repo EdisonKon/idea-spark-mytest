@@ -86,7 +86,10 @@ object MainTest {
     var chars = List('1', '2', '3', '4') //List(1, 2, 3, 4)
 
     //返回的是List类型的元组(Tuple）
-    nums zip chars //得到 List((1,1), (2,2), (3,3), (4,4))
+    var ziped = nums zip chars //得到 List((1,1), (2,2), (3,3), (4,4))
+    //unzip
+    print(ziped.unzip) //(List(1, 2, 3, 4),List(1, 2, 3, 4))
+
     //toString
     print(nums.toString()) // List(1, 2, 3, 4)
     //mkString
@@ -104,6 +107,11 @@ object MainTest {
     //相同元素
     List.fill(5)("hey") //List(hey, hey, hey, hey, hey)
 
+    //list.flatten，将列表平滑成第一个无素 压扁
+    var xss = List(List('a', 'b'), List('c'), List('d', 'e'))
+    xss.flatten //List(a, b, c, d, e)
+    //列表连接
+    List.concat(List('a', 'b'), List('c')) // List(a, b, c)
 
     //插入算法
     def isort(xs: List[Int]): List[Int] =
