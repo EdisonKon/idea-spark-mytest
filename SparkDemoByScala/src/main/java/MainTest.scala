@@ -54,10 +54,33 @@ object MainTest {
     */
     //*****************************************************************************************
     //List操作
+    //List构造方法
+    //采用::及Nil进行列表构建
+    var numsList = 1 :: (2 :: (3 :: (4 :: Nil)))
+    //由于::操作符的优先级是从右往左的，因此上一条语句等同于下面这条语句
+    var numsList2=1::2::3::4::Nil
     //多重list
     val diagMatrix=List(List(1,0,0),List(0,1,0),List(0,0,1))
     //遍历多重list
     for(anList : List[Int] <- diagMatrix ; anint : Int <- anList) println(anint);
+    //翻转 tail 返回除了第一个的所有元素
+    //翻转 init 返回除了最后一个的所有元素
+    //下面的结果一样
+    print(numsList.tail.reverse)
+    print(numsList.reverse.init)
+    //是否为空
+    numsList.isEmpty
+    //获取第二个元素
+    numsList.tail.head
+    //插入算法
+    def isort(xs: List[Int]): List[Int] =
+      if (xs.isEmpty) Nil
+      else insert(xs.head, isort(xs.tail))
 
+    def insert(x: Int, xs: List[Int]): List[Int] =
+      if (xs.isEmpty || x <= xs.head) x :: xs
+      else xs.head :: insert(x, xs.tail)
+
+    isort(numsList);
   }
 }
